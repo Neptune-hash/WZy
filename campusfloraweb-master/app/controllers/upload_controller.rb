@@ -1,4 +1,4 @@
-class UploadsController < InheritedResources::Base
+class UploadController < InheritedResources::Base
 
   # private
 
