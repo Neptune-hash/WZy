@@ -1,9 +1,9 @@
 ActiveAdmin.register Upload do
-  permit_params :Common Name, :Indigenous Name, :Information 
+  permit_params :Common_Name, :Indigenous_Name, :Information 
 active_admin_importable
   index do
-    column :Common Name
-    column :Indigenous Name
+    column :Common_Name
+    column :Indigenous_Name
     column :Information
     actions
   end
