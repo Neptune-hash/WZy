@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20170406052832) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "upload", force: :cascade do |t|
+    t.string "Common_Name",  limit: 255
+    t.string "Indigenous_Name",  limit: 255
+    t.string "Information",  limit: 255
+  end
+
   create_table "families", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
