@@ -1,5 +1,5 @@
 ActiveAdmin.register Species do
-  permit_params :commonName, :authority, :distribution, :indigenousName, :information, :genusSpecies, :description, :family_id, :slug, species_locations_attributes: [:lat, :lon, :arborplan_id, :information, :removed, :id, :_destroy], images_attributes: [:image, :id, :creator, :copyright_holder, :_destroy]
+  permit_params :commonname, :authority, :distribution, :indigenousName, :information, :genusSpecies, :description, :family_id, :slug, species_locations_attributes: [:lat, :lon, :arborplan_id, :information, :removed, :id, :_destroy], images_attributes: [:image, :id, :creator, :copyright_holder, :_destroy]
   remove_filter :species_location_trails
   active_admin_importable
   # Override find resource to get the select species by the friendly slug, rather than int id
@@ -21,7 +21,7 @@ ActiveAdmin.register Species do
     f.inputs 'Details' do
       f.input :family
       f.input :genusSpecies
-      f.input :commonName
+      f.input :commonname
       f.input :indigenousName
       f.input :authority
       f.input :distribution
@@ -68,7 +68,7 @@ ActiveAdmin.register Species do
       end
       row :genusSpecies
       row :authority
-      row :commonName
+      row :commonname
       row :indigenousName
       row :distribution
       row :description do
@@ -112,7 +112,7 @@ ActiveAdmin.register Species do
     end
     column :genusSpecies
     column :authority
-    column :commonName
+    column :commonname
     column :indigenousName
     column :distribution
     column :description
@@ -127,7 +127,7 @@ ActiveAdmin.register Species do
   filter :family, as: :select, collection: proc { Family.all.order('name') }
   filter :genusSpecies
   filter :authority
-  filter :commonName
+  filter :commonname
   filter :indigenousName
   filter :distribution
   filter :description
