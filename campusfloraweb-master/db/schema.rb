@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20170406052832) do
 
   create_table "species", force: :cascade do |t|
     t.string   "genusSpecies",   limit: 255
-    t.string   "commonName",     limit: 255
+    t.string   "common_name",     limit: 255
     t.string   "indigenousName", limit: 255
     t.string   "authority",      limit: 255
     t.text     "distribution",   limit: 65535
